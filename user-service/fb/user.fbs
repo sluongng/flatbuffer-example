@@ -1,0 +1,25 @@
+namespace User;
+
+rpc_service UserService {
+  GetUser(GetUserReq):UserResp;
+}
+
+table GetUserReq {
+  id:int32;
+}
+
+table UserResp {
+  user:User;
+  roles:[Role];
+}
+
+table Role {
+  id:int32;
+  name:string;
+}
+
+table User {
+  id:int32;
+  name:string;
+  email:string;
+}

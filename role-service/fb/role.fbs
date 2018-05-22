@@ -1,0 +1,26 @@
+namespace Role;
+
+rpc_service RoleService {
+  GetRoles(EmptyReq):RoleResp;
+  GetUserRoles(GetUserRoleReq):UserRolesResp;
+}
+
+table EmptyReq {}
+
+table RoleResp {
+  roles:[Role];
+}
+
+table GetUserRoleReq {
+  user_id:int32;
+}
+
+table UserRolesResp {
+  user_id:int32;
+  roles:[Role];
+}
+
+table Role {
+  id:int32;
+  name:string;
+}
